@@ -1,0 +1,45 @@
+matches:
+  - trigger: ":aws"
+    replace: "https://us-east-1.console.aws.amazon.com/console/home?region=us-east-1#"
+
+  - trigger: "l3"
+    replace: "http://localhost:3000/"
+
+  - trigger: "ldo"
+    replace: "http://localhost:4000/docs"
+
+  - trigger: ":b2bfront"
+    replace: "https://github.com/lami-health/b2b"
+
+  - trigger: ":b2bback"
+    replace: "https://github.com/lami-health/symptom-checker"
+
+  - trigger: ":website"
+    replace: "https://github.com/lami-health/website"
+
+  - trigger: ":exams"
+    replace: "https://github.com/lami-health/backend-exam-service"
+
+  - trigger: ":attendance"
+    replace: "https://github.com/lami-health/attendance-service"
+
+  - trigger: ":jira"
+    replace: "https://lamimed.atlassian.net/browse"
+
+  # Print the current date
+  - trigger: ":date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%m/%d/%Y"
+
+  # Print the output of a shell command
+  - trigger: ":shell"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "echo 'Hello from your shell'"
